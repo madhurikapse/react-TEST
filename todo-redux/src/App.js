@@ -1,7 +1,7 @@
 // src/App.js
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addTodo, deleteTodo } from './reduxexample/action';
+import { addTodo, deleteTodo } from './/action';
 import "./App.css"
 
 function App() {
