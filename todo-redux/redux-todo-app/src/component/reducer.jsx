@@ -13,16 +13,7 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 todos: [...state.todos, { text: action.payload}],
             };
-        
-        case DELETETODO:
-            return {
-                ...state,
-                todos: state.todos
-                    .map((todo, index) =>
-                        index === action.payload ? { ...todo, deleted: true } : todo
-                    )
-                    .filter((todo) => !todo.deleted),
-            };
+
         default:
          return state
     }

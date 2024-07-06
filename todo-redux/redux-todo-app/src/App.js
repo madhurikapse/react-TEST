@@ -1,7 +1,7 @@
 // src/App.js
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addTodo, deleteTodo } from './component/action';
+import { addTodo} from './component/action';
 import "./App.css"
 
 function App() {
@@ -9,11 +9,9 @@ function App() {
     const todos = useSelector((state) => state.todos);
     const dispatch = useDispatch();
 
-    const handleAddTodo = () => {
+    const handlebutton= () => {
         if (todoinput) {
-            dispatch(addTodo(todoinput));
-            settodoInput('');
-        }
+            dispatch(addTodo(todoinput)); }
     };
 
     return (
@@ -22,16 +20,15 @@ function App() {
             <input
                 type="text"
                 value={todoinput}
+                   placeholder="add todo here"
                 onChange={(e) => settodoInput(e.target.value)}
-                placeholder="ADD TODO"
+             
             />
-            <button onClick={handleAddTodo}>Add</button>
+            <button onClick={handlebutton}>Add</button>
             <ul>
                 {todos.map((todo, index) => (
                     <li key={index}>
                         {todo.text}
-                        
-                        <button onClick={() => dispatch(deleteTodo(index))}>Delete</button>
                     </li>
                 ))}
             </ul>
